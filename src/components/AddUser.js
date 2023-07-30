@@ -25,18 +25,35 @@ class AddUser extends React.Component {
                 <input type='checkbox' id='isHappy' onChange={event => this.setState({ isHappy: event.target.checked })} />
                 <button type='button' onClick={() => {
                     this.myForm.reset()
-                    this.userAdd = {
-                        firstname: this.state.firstname,
-                        lastname: this.state.lastname,
-                        age: this.state.age,
-                        bio: this.state.bio,
-                        isHappy: this.state.isHappy,
+                    
+                    if(this.props.isNewUser) {
+                        this.userAdd = {
+                            firstname: this.state.firstname,
+                            lastname: this.state.lastname,
+                            age: this.state.age,
+                            bio: this.state.bio,
+                            isHappy: this.state.isHappy,
+                        }
+                    } else {
+                        this.userAdd = {
+                            firstname: this.state.firstname || this.props.user.firstname,
+                            lastname: this.state.lastname || this.props.user.lastname,
+                            age: this.state.age || this.props.user.age,
+                            bio: this.state.bio || this.props.user.bio,
+                            isHappy: this.state.isHappy,
+                        }
                     }
+                    
                     if (this.props.user) {
                         this.userAdd.id = this.props.user.id
                     }
-                    this.props.onAdd(this.userAdd
-                    )
+                    this.setState({ firstname: '', lastname: '', age: 0, bio: '', isHappy: false})
+                    for(const i in this.state) {
+                        if (Boolean(this.state[i]) === true) {
+                            this.props.onAdd(this.userAdd)
+                            break;
+                        }
+                    }
                 }
                 }>Add</button>
             </form>

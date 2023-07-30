@@ -18,7 +18,7 @@ class User extends React.Component {
                 <h3>{this.user.firstname} {this.user.lastname}</h3>
                 <p>{this.user.bio}</p>
                 <b>{this.user.isHappy ? 'Happy :)' : 'Sad :('}</b>
-                {this.state.editForm && <AddUser user={this.user} onAdd={this.props.onEdit} />}
+                {this.state.editForm && <AddUser isNewUser={false} user={this.user} onAdd={this.props.onEdit} />}
             </div>
         )
     }

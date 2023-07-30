@@ -10,10 +10,19 @@ class App extends React.Component {
             users: [
                 {
                     id: 1,
-                    firstname: 'Nik',
-                    lastname: 'Goncharov',
-                    age: 16,
-                    bio: 'ojnafbeaiubet;ibeoub',
+                    firstname: 'John',
+                    lastname: 'Sparrow',
+                    age: 20,
+                    bio: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Nunc quis dapibus odio, at venenatis sapien. 
+                    Mauris vel nunc dapibus purus venenatis facilisis ac eget neque. 
+                    Nulla est urna, sodales in justo sit amet, ultricies venenatis eros. 
+                    Donec vel nisl sit amet magna volutpat cursus ac suscipit ipsum.  
+                    Ut quis hendrerit ipsum. 
+                    Mauris eget lobortis quam. Ut in pulvinar nibh. 
+                    Quisque id nulla sed metus porttitor rutrum eu et urna. 
+                    Mauris lorem leo, dictum vitae ex eget, hendrerit semper urna. 
+                    Duis id est vitae nisi scelerisque rutrum in at tortor.`,
                     isHappy: true
                 },
                 {
@@ -21,7 +30,16 @@ class App extends React.Component {
                     firstname: 'Bob',
                     lastname: 'Smith',
                     age: 44,
-                    bio: 'ojnafbeaiuaffdbdbbet;ibeoub',
+                    bio: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Nunc quis dapibus odio, at venenatis sapien. 
+                    Mauris vel nunc dapibus purus venenatis facilisis ac eget neque. 
+                    Nulla est urna, sodales in justo sit amet, ultricies venenatis eros. 
+                    Donec vel nisl sit amet magna volutpat cursus ac suscipit ipsum.  
+                    Ut quis hendrerit ipsum. 
+                    Mauris eget lobortis quam. Ut in pulvinar nibh. 
+                    Quisque id nulla sed metus porttitor rutrum eu et urna. 
+                    Mauris lorem leo, dictum vitae ex eget, hendrerit semper urna. 
+                    Duis id est vitae nisi scelerisque rutrum in at tortor.`,
                     isHappy: false
                 }
             ]
@@ -37,7 +55,7 @@ class App extends React.Component {
                 <main>
                     <Users onEdit={this.editUser} onDelete={this.deleteUser} users={this.state.users} />
                 </main>
-                <aside><AddUser onAdd={this.addUser} /></aside>
+                <aside><AddUser isNewUser={true} onAdd={this.addUser} /></aside>
             </div>
         )
     }
